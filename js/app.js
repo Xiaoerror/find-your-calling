@@ -277,11 +277,11 @@ function completeMyths() {
 
 /* ===== 价值观探索 ===== */
 const VALUE_QUESTIONS = [
-  { id: 'vq1', q: '你尊敬的人是谁？尊敬他们什么特质？', hint: '你尊敬的特质往往是你内心看重的价值' },
-  { id: 'vq2', q: '小时候让你感到开心的事是什么？', hint: '童年的快乐常常指向你未被社会规训的真实需求' },
-  { id: 'vq3', q: '你无法容忍的事是什么？', hint: '愤怒指向的往往是你希望改善的领域' },
-  { id: 'vq4', q: '回顾人生，你最骄傲的时刻是什么？', hint: '骄傲的时刻揭示了你在意什么' },
-  { id: 'vq5', q: '如果钱不是问题，你会用余生做什么？', hint: '这个问题帮你剥离外在约束，看到内核' }
+  { id: 'vq1', q: '你尊敬的人是谁？尊敬他们什么特质？', hint: '你尊敬的特质往往是你内心看重的价值', example: '示例：我尊敬我的一位大学老师，他给本科生上课坚持用黑板板书，很少用PPT，不是照本宣科，而是真心在乎学生成长。' },
+  { id: 'vq2', q: '小时候让你感到开心的事是什么？', hint: '童年的快乐常常指向你未被社会规训的真实需求', example: '示例：小时候暑假去外婆家，跟着她一起种菜浇水，看着种子发芽长大，每天起床第一件事就是跑去菜地看变化。' },
+  { id: 'vq3', q: '你无法容忍的事是什么？', hint: '愤怒指向的往往是你希望改善的领域', example: '示例：明明有更高效的方法，却因为"一直都是这么干的"就拒绝改变。' },
+  { id: 'vq4', q: '回顾人生，你最骄傲的时刻是什么？', hint: '骄傲的时刻揭示了你在意什么', example: '示例：高三下学期数学成绩很差，每天坚持刷题，遇到不理解的及时请教老师，高考数学成绩有很大提升。' },
+  { id: 'vq5', q: '如果钱不是问题，你会用余生做什么？', hint: '这个问题帮你剥离外在约束，看到内核', example: '示例：开一间茶馆，听不同的人讲述自己的经历，哪怕不收钱也行。' }
 ];
 
 function renderValues() {
@@ -307,6 +307,7 @@ function renderValues() {
         <div style="margin-bottom:16px;">
           <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
           <p style="font-size:12px;color:var(--gray-400);margin-bottom:6px;">${q.hint}</p>
+          ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
           <textarea class="textarea" id="va-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
         </div>`;
     });
@@ -528,6 +529,7 @@ function renderStrengths() {
     STRENGTH_QUESTIONS.forEach(q => {
       html += `<div style="margin-bottom:14px;">
         <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
+        ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
         <textarea class="textarea" id="sa-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
       </div>`;
     });
@@ -628,11 +630,11 @@ function completeStrengths() {
 
 /* ===== 喜欢探索 ===== */
 const PASSION_QUESTIONS = [
-  { id: 'pq1', q: '你现在有即使花钱也想学习的事情吗？' },
-  { id: 'pq2', q: '在你的书架上（或收藏夹里）最多的是什么类型的书/内容？' },
-  { id: 'pq3', q: '有没有遇到过让你产生"真是太好了！它拯救了我！"这种感觉的领域或事物？' },
-  { id: 'pq4', q: '你生活中想感谢的"工作"或"创造者"是谁？（你感谢的往往是你向往的）' },
-  { id: 'pq5', q: '你会对社会中的什么现象感到愤怒？（愤怒指向的是你希望改善的领域）' }
+  { id: 'pq1', q: '你现在有即使花钱也想学习的事情吗？', example: '示例：关于探索自己，人生规划、职业规划相关领域的知识。' },
+  { id: 'pq2', q: '在你的书架上（或收藏夹里）最多的是什么类型的书/内容？', example: '示例：视频博主讲"XX背后的原理"类——飞机餐为什么那么难吃、奶茶店怎么定价，这种我一看就停不下来。' },
+  { id: 'pq3', q: '有没有遇到过让你产生"真是太好了！它拯救了我！"这种感觉的领域或事物？', example: '示例：健身。曾经有段时间很消沉，开始规律运动后整个人状态都变了，现在虽然没那么多时间，但依然坚持慢跑或快走。' },
+  { id: 'pq4', q: '你生活中想感谢的"工作"或"创造者"是谁？（你感谢的往往是你向往的）', example: '示例：很感谢我关注的某个科普博主，他把复杂的科学原理讲得像故事一样，让我重新对"学习"这件事产生了兴趣。' },
+  { id: 'pq5', q: '你会对社会中的什么现象感到愤怒？（愤怒指向的是你希望改善的领域）', example: '示例：有一些不公平的现象发生，弱势群体难以发声，受到关注较少。' }
 ];
 
 function renderPassions() {
@@ -654,6 +656,7 @@ function renderPassions() {
     PASSION_QUESTIONS.forEach(q => {
       html += `<div style="margin-bottom:14px;">
         <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
+        ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
         <textarea class="textarea" id="pa-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
       </div>`;
     });
