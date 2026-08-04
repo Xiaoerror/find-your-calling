@@ -123,7 +123,7 @@ function renderHome() {
       </div>
       <button class="btn btn-primary btn-lg" onclick="navigate('modulemap')">开始探索</button>
       <p style="margin-top:16px; font-size:13px; color:var(--gray-400);">
-        约需 20-30 分钟 · 所有数据仅保存在你的浏览器中
+        约需 5-10 分钟 · 所有数据仅保存在你的浏览器中
       </p>
     </div>
   `;
