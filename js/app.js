@@ -277,11 +277,11 @@ function completeMyths() {
 
 /* ===== 价值观探索 ===== */
 const VALUE_QUESTIONS = [
-  { id: 'vq1', q: '你尊敬的人是谁？尊敬他们什么特质？', hint: '你尊敬的特质往往是你内心看重的价值', example: '示例：我尊敬我的一位大学老师，他给本科生上课坚持用黑板板书，很少用PPT，不是照本宣科，而是真心在乎学生成长。' },
-  { id: 'vq2', q: '小时候让你感到开心的事是什么？', hint: '童年的快乐常常指向你未被社会规训的真实需求', example: '示例：小时候暑假去外婆家，跟着她一起种菜浇水，看着种子发芽长大，每天起床第一件事就是跑去菜地看变化。' },
-  { id: 'vq3', q: '你无法容忍的事是什么？', hint: '愤怒指向的往往是你希望改善的领域', example: '示例：明明有更高效的方法，却因为"一直都是这么干的"就拒绝改变。' },
-  { id: 'vq4', q: '回顾人生，你最骄傲的时刻是什么？', hint: '骄傲的时刻揭示了你在意什么', example: '示例：高三下学期数学成绩很差，每天坚持刷题，遇到不理解的及时请教老师，高考数学成绩有很大提升。' },
-  { id: 'vq5', q: '如果钱不是问题，你会用余生做什么？', hint: '这个问题帮你剥离外在约束，看到内核', example: '示例：开一间茶馆，听不同的人讲述自己的经历，哪怕不收钱也行。' }
+  { id: 'vq1', q: '你尊敬的人是谁？尊敬他们什么特质？（你尊敬的特质往往是你内心看重的价值）', example: '例：我尊敬我的一位大学老师，他给本科生上课坚持用黑板板书，很少用PPT，不是照本宣科，而是真心在乎学生成长。' },
+  { id: 'vq2', q: '小时候让你感到开心的事是什么？（童年的快乐常常指向你未被社会规训的真实需求）', example: '例：小时候暑假去外婆家，跟着她一起种菜浇水，看着种子发芽长大，每天起床第一件事就是跑去菜地看变化。' },
+  { id: 'vq3', q: '你无法容忍的事是什么？（愤怒指向的往往是你希望改善的领域）', example: '例：明明有更高效的方法，却因为"一直都是这么干的"就拒绝改变。' },
+  { id: 'vq4', q: '回顾人生，你最骄傲的时刻是什么？（骄傲的时刻揭示了你在意什么）', example: '例：高三下学期数学成绩很差，每天坚持刷题，遇到不理解的及时请教老师，高考数学成绩有很大提升。' },
+  { id: 'vq5', q: '如果钱不是问题，你会用余生做什么？（这个问题帮你剥离外在约束，看到内核）', example: '例：开一间茶馆，听不同的人讲述自己的经历，哪怕不收钱也行。' }
 ];
 
 function renderValues() {
@@ -306,8 +306,7 @@ function renderValues() {
       html += `
         <div style="margin-bottom:16px;">
           <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
-          <p style="font-size:12px;color:var(--gray-400);margin-bottom:6px;">${q.hint}</p>
-          ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
+          ${q.example ? `<p style="font-size:12px;color:var(--gray-400);margin-bottom:6px;">${q.example}</p>` : ''}
           <textarea class="textarea" id="va-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
         </div>`;
     });
@@ -503,11 +502,11 @@ function completeValues() {
 
 /* ===== 擅长识别 ===== */
 const STRENGTH_QUESTIONS = [
-  { id: 'sq1', q: '你觉得充实的体验是什么？（不是结果，是过程中让你感到充实的事）' },
-  { id: 'sq2', q: '最近让你烦躁或心慌的是什么事？（反推：别人做不到而你自然能做到的事）' },
-  { id: 'sq3', q: '别人经常夸你什么？' },
-  { id: 'sq4', q: '你做事时，有哪些是你无意识就会做的？（比如总是在观察别人、总是想到就做）' },
-  { id: 'sq5', q: '回顾过去，哪些事你做起来比大多数人都轻松？' }
+  { id: 'sq1', q: '你觉得充实的体验是什么？（充实的瞬间往往藏着你的擅长模式）', example: '例：考试之前的突击复习，十分充实。' },
+  { id: 'sq2', q: '最近让你烦躁或心慌的是什么事？（让你烦躁的事，反过来说明你在意什么、你比别人敏锐什么）', example: '例：工作中要开始一个新项目，没有什么头绪，很烦。' },
+  { id: 'sq3', q: '别人经常夸你什么？（别人眼中的你，常常是你自己视而不见的优势）', example: '例："你太有耐心了"——其实我只是觉得把事讲清楚是应该的。' },
+  { id: 'sq4', q: '你做事时，有哪些是你无意识就会做的？（无意识的行为模式最接近你的天赋）', example: '例：拿到一个新东西，我会不由自主地琢磨"它为什么这么设计""还能怎么改进"。' },
+  { id: 'sq5', q: '回顾过去，哪些事你做起来比大多数人都轻松？（你做起来轻松而别人吃力的事，就是你的擅长）', example: '例：学新软件从来不看教程，自己点一遍就全摸通了。' }
 ];
 
 function renderStrengths() {
@@ -529,7 +528,7 @@ function renderStrengths() {
     STRENGTH_QUESTIONS.forEach(q => {
       html += `<div style="margin-bottom:14px;">
         <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
-        ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
+        ${q.example ? `<p style="font-size:12px;color:var(--gray-400);margin-bottom:6px;">${q.example}</p>` : ''}
         <textarea class="textarea" id="sa-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
       </div>`;
     });
@@ -630,11 +629,11 @@ function completeStrengths() {
 
 /* ===== 喜欢探索 ===== */
 const PASSION_QUESTIONS = [
-  { id: 'pq1', q: '你现在有即使花钱也想学习的事情吗？', example: '示例：关于探索自己，人生规划、职业规划相关领域的知识。' },
-  { id: 'pq2', q: '在你的书架上（或收藏夹里）最多的是什么类型的书/内容？', example: '示例：视频博主讲"XX背后的原理"类——飞机餐为什么那么难吃、奶茶店怎么定价，这种我一看就停不下来。' },
-  { id: 'pq3', q: '有没有遇到过让你产生"真是太好了！它拯救了我！"这种感觉的领域或事物？', example: '示例：健身。曾经有段时间很消沉，开始规律运动后整个人状态都变了，现在虽然没那么多时间，但依然坚持慢跑或快走。' },
-  { id: 'pq4', q: '你生活中想感谢的"工作"或"创造者"是谁？（你感谢的往往是你向往的）', example: '示例：很感谢我关注的某个科普博主，他把复杂的科学原理讲得像故事一样，让我重新对"学习"这件事产生了兴趣。' },
-  { id: 'pq5', q: '你会对社会中的什么现象感到愤怒？（愤怒指向的是你希望改善的领域）', example: '示例：有一些不公平的现象发生，弱势群体难以发声，受到关注较少。' }
+  { id: 'pq1', q: '你现在有即使花钱也想学习的事情吗？（愿意花钱花时间的事，就是真喜欢）', example: '例：关于探索自己，人生规划、职业规划相关领域的知识。' },
+  { id: 'pq2', q: '在你的书架上（或收藏夹里）最多的是什么类型的书/内容？（收藏夹不会骗人，它暴露了你最自然的注意力流向）', example: '例：视频博主讲"XX背后的原理"类——飞机餐为什么那么难吃、奶茶店怎么定价，这种我一看就停不下来。' },
+  { id: 'pq3', q: '有没有遇到过让你产生"真是太好了！它拯救了我！"这种感觉的领域或事物？（拯救过你的事，往往是你最想传递给他人的）', example: '例：健身。曾经有段时间很消沉，开始规律运动后整个人状态都变了，现在虽然没那么多时间，但依然坚持慢跑或快走。' },
+  { id: 'pq4', q: '你生活中想感谢的"工作"或"创造者"是谁？（你感谢的，往往就是你向往的）', example: '例：很感谢我关注的某个科普博主，他把复杂的科学原理讲得像故事一样，让我重新对"学习"这件事产生了兴趣。' },
+  { id: 'pq5', q: '你会对社会中的什么现象感到愤怒？（愤怒指向的是你希望改善的领域）', example: '例：有一些不公平的现象发生，弱势群体难以发声，受到关注较少。' }
 ];
 
 function renderPassions() {
@@ -656,7 +655,7 @@ function renderPassions() {
     PASSION_QUESTIONS.forEach(q => {
       html += `<div style="margin-bottom:14px;">
         <label style="font-size:14px;font-weight:500;color:var(--gray-700);display:block;margin-bottom:6px;">${q.q}</label>
-        ${q.example ? `<p style="font-size:12px;color:var(--gray-300);margin-bottom:6px;">${q.example}</p>` : ''}
+        ${q.example ? `<p style="font-size:12px;color:var(--gray-400);margin-bottom:6px;">${q.example}</p>` : ''}
         <textarea class="textarea" id="pa-${q.id}" placeholder="写下你的答案...">${a[q.id] || ''}</textarea>
       </div>`;
     });
