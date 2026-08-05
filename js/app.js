@@ -334,9 +334,9 @@ function renderValues() {
       </div></div>`;
   } else if (step === '3') {
     html += `<div class="card"><div class="card-title">第三步：排序</div>
-      <div class="card-desc">将选中的价值观拖入对应位置，选出最重要的5个</div>`;
+      <div class="card-desc">将选中的价值观拖入对应位置，选出最重要的3个</div>`;
 
-    html += renderSortZone('最重要（选5个）', 'top', 5);
+    html += renderSortZone('最重要（选3个）', 'top', 3);
     html += renderSortZone('重要', 'mid', 99);
     html += renderSortZone('一般', 'low', 99);
 
@@ -437,7 +437,7 @@ function addSortItem(zone, word) {
   const state = AppState.get();
   const sorted = state.values.sorted || {};
   if (!sorted[zone]) sorted[zone] = [];
-  if (zone === 'top' && sorted[zone].length >= 5) { toast('最重要最多选5个'); return; }
+  if (zone === 'top' && sorted[zone].length >= 3) { toast('最重要最多选3个'); return; }
   sorted[zone].push({ word });
   AppState.update({ sorted }, 'values');
   renderValues();
@@ -872,8 +872,8 @@ function renderCrossAnalysis() {
 
     <div class="cross-summary">
       <div class="cross-box values">
-        <div class="box-label">🧭 价值观 Top 5</div>
-        <div class="box-tags">${valuesTop.slice(0,5).map(v => `<span class="box-tag">${v}</span>`).join('')}</div>
+        <div class="box-label">🧭 价值观 Top 3</div>
+        <div class="box-tags">${valuesTop.slice(0,3).map(v => `<span class="box-tag">${v}</span>`).join('')}</div>
       </div>
       <div class="cross-box strengths">
         <div class="box-label">💪 擅长模式 Top 3</div>
@@ -1076,7 +1076,7 @@ function renderReport() {
       </p>
 
       <div class="pdf-section">
-        <h3>🧭 核心价值观 Top 5</h3>
+        <h3>🧭 核心价值观 Top 3</h3>
         <div class="value">${valuesTop.map(v => v.word).join(' · ') || '尚未完成'}</div>
       </div>
 
